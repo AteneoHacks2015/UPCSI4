@@ -59,8 +59,10 @@
 
 		.content-section.section-1 {
 			@include color-scheme(content-1);
-			height: 500px;
-			@include responsive-key(height, (mobile 200px, small 300px));
+			background: url("/images/welcome1.png") no-repeat center center;
+			background-size: cover;
+			height: 600px;
+			@include responsive-key(height, (mobile 300px, small 500px));
 
 			a {
 				@include color-scheme(content-1);
@@ -69,8 +71,10 @@
 
 		.content-section.section-2 {
 			@include color-scheme(content-2);
-			height: 500px;
-			@include responsive-key(height, (mobile 200px, small 300px));
+			background: url("/images/welcome2.png") no-repeat center center;
+			background-size: cover;
+			height: 600px;
+			@include responsive-key(height, (mobile 300px, small 500px));
 
 			a {
 				@include color-scheme(content-2);
@@ -79,8 +83,10 @@
 
 		.content-section.section-3 {
 			@include color-scheme(content-3);
-			height: 500px;
-			@include responsive-key(height, (mobile 200px, small 300px));
+			background: url("/images/welcome3.png") no-repeat center center;
+			background-size: cover;
+			height: 600px;
+			@include responsive-key(height, (mobile 300px, small 500px));
 
 			a {
 				@include color-scheme(content-3);

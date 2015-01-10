@@ -1,11 +1,26 @@
-<div style="padding-top: 100px">
-	<h1>Profile</h1>
-
-	<h1>Username: <%= current_user.username%> </h1>
-	<h1>Email add: <%= current_user.email%> </h1>
-	<h1>Institution Name: <%= @user.institution_name %> </h1>
-	<h1>Address: <%= @address %> </h1>
-	<h1>Contact Number: <%= @user.contact_num %> </h1>
-	<h1>Created at: <%= @current_user.created_at %></h1>
-
+<div id="sponsors-profile">
+	<div id="content">
+		<div class="content-section section-1" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title">
+					Profile
+				</span>
+			</div>
+		</div>
+		<div class="content-section section-2" class="fullwidth">
+			<div class="fixedwidth">
+				<h1>Username: <%= current_user.username%> </h1>
+				<h1>Email add: <%= current_user.email%> </h1>
+				<h1>Institution Name: <%= @user.institution_name %> </h1>
+				<h1>Address: <%= @address %> </h1>
+				<h1>Contact Number: <%= @user.contact_num %> </h1>
+				<h1>Created at: <%= @current_user.created_at %></h1>
+			</div>
+		</div>
+		<div id="footer" class="fullwidth">
+			<div class="fixedwidth">
+				&copy; UPCSI4 Ateneo Hacks 2015
+			</div>
+		</div>
+	</div>
 </div>
