@@ -26,7 +26,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :scholarships
+  resources :scholarships do
+    collection do
+      get 'view', to: 'scholarships#view'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -18,6 +18,10 @@ class ScholarshipsController < ApplicationController
 		end
 	end
 
+	def view
+		@id = params[:id]
+	end
+
 	private
 		def scholarships_params
 			params.require(:scholarships).permit(:title, :desc, :slot, :req, :ben, :app_res)
