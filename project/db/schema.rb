@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110082255) do
+ActiveRecord::Schema.define(version: 20150110233626) do
 
   create_table "accounts", force: true do |t|
     t.integer  "tag"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 20150110082255) do
     t.string "municipality"
     t.string "street"
     t.string "block"
+  end
+
+  create_table "applicant_grants", force: true do |t|
+    t.integer "app_id"
+    t.integer "sch_id"
   end
 
   create_table "applicant_scholarship_joins", force: true do |t|
