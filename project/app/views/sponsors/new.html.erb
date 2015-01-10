@@ -1,33 +1,53 @@
-<h1>Sign up as sponsor</h1>
-
-<%= form_tag :role=>'form', :action=>'create' do %>
-	
-
-	<%= hidden_field :accounts, :tag, :value=>@tag %>
-
-	<div>
-		<%= label :accounts, 'Username' %>
-		<%= text_field :accounts, :accountsname, :value=>@username, placeholder:@unameholder %>
+<div id="sponsors">
+	<div id="header" class="fullwidth">
+		<div class="fixedwidth">
+			<span id="header-logo" class="left">
+				eskolarship
+			</span>
+			<span id="nav-list" class="right">
+				<%= link_to 'Home', root_path,
+					method: :get, class: "nav-item left" %>
+				<%= link_to 'Login', login_accounts_path,
+					method: :get, class: "nav-item left" %>
+				<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
+					method: :get, class: "nav-item left" %>
+			</span>
+		</div>
 	</div>
+	<div id="content">
+		<div class="content-section section-1" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title">
+					Sponsor Sign Up
+				</span>
+			</div>
+		</div>
+		<div class="content-section section-2" class="fullwidth">
+			<div class="fixedwidth">
+				<%= form_tag :role=>'form', :action=>'create' do %>
+					<%= hidden_field :accounts, :tag, :value=>@tag %>
+						<%= text_field :accounts, :accountsname, :value=>@username, placeholder:@unameholder %>
+						<%= label :accounts, 'Username' %>
+						<%= text_field :accounts, :email, :value=>@email, placeholder:@emailholder %>
+						<%= label :accounts, 'Email' %>
+						<%= password_field :accounts, :password, placeholder:'********' %>
+						<%= label :accounts, 'Password' %>
+						<%= password_field :accounts, :password_confirmation, placeholder:'********' %>
+						<%= label :accounts, 'Confirm Password' %>
 
-	<div>
-		<%= label :accounts, 'Email' %>
-		<%= text_field :accounts, :email, :value=>@email, placeholder:@emailholder %>
+						<!-- add forms specific for sponsors -->
+						
+						<!-- add forms specific for sponsors -->
+
+						<%= button_tag 'Create Account', :type=>'submit' %>
+
+				<% end %>
+			</div>
+		</div>
+		<div id="footer" class="fullwidth">
+			<div class="fixedwidth">
+				&copy; UPCSI4 Ateneo Hacks 2015
+			</div>
+		</div>
 	</div>
-
-	<div>
-		<%= label :accounts, 'Password' %>
-		<%= password_field :accounts, :password, placeholder:'********' %>
-	</div>
-
-	<div>
-		<%= label :accounts, 'Confirm Password' %>
-		<%= password_field :accounts, :password_confirmation, placeholder:'********' %>
-	</div>
-
-	<div>
-		<%= button_tag 'Create Account', :type=>'submit' %>
-	</div>
-<% end %>
-
-<%= link_to 'Back', root_path%>
+</div>
