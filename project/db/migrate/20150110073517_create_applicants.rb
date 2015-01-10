@@ -9,7 +9,6 @@ class CreateApplicants < ActiveRecord::Migration
     	t.integer :age
     	t.string :level
     	t.string :degree_program
-    	t.string :email_add
     end
   end
 end

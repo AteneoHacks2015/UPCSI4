@@ -42,6 +42,11 @@
 
 		.content-section {
 			position: relative;
+			@include transition(preset-1);
+
+			.fixedwidth {
+				position: relative;
+			}
 
 			.title {
 				position: absolute;
@@ -51,6 +56,7 @@
 				text-transform: uppercase;
 				@include responsive-key(top, (mobile 30px, small 50px));
 				@include responsive-key(font-size, (mobile 200%, small 250%));
+				@include transition(preset-1);
 			}
 
 			.title.left {
@@ -67,6 +73,7 @@
 				font-size: 250%;
 				@include responsive-key(top, (mobile 80px, small 110px));
 				@include responsive-key(font-size, (mobile 100%, small 150%, medium 200%));
+				@include transition(preset-1);
 			}
 
 			.desc.left {
@@ -117,7 +124,7 @@
 			text-align: center;
 			padding: 80px 0px 50px 0px;
 			font-size: 200%;
-			@include responsive-key(padding, (mobile 20px 0px 10px 0px, small 50px 0px 25px 0px));
+			@include responsive-key(padding, (mobile "20px 0px 10px 0px", small "50px 0px 25px 0px"));
 			@include responsive-key(font-size, (mobile 100%, small 140%, medium 170%));
 
 			a {
