@@ -1,6 +1,10 @@
 class AccountsController < ApplicationController
 
 	def login
+		if current_user == nil
+			@account = Accounts.new
+		else
+		end		
 	end
 
 	def signin

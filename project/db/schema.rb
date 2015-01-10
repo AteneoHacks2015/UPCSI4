@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110073758) do
+ActiveRecord::Schema.define(version: 20150110082255) do
 
   create_table "accounts", force: true do |t|
     t.integer  "tag"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20150110073758) do
   end
 
   create_table "scholarships", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sponsor_scholarship_joins", force: true do |t|

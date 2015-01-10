@@ -25,6 +25,5 @@ class ApplicationController < ActionController::Base
       deny_access
     end
   end 
-end
 
 end

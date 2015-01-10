@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       post 'logout', to: 'accounts#logout'
     end
   end
+  
   resources :applicants
   resources :sponsors
 
