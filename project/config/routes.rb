@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   resources :applicants
   resources :sponsors
+  resources :scholarships
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
