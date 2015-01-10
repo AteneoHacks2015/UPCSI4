@@ -9,17 +9,52 @@
 		</div>
 		<div class="content-section section-2" class="fullwidth">
 			<div class="fixedwidth">
-				<h1>Username: <%= current_user.username%> </h1>
-				<h1>Email add: <%= current_user.email%> </h1>
-				<h1>Name: <%= @user.name %> </h1>
-				<h1>Gender: <%= @user.gender %> </h1>
-				<h1>Address: <%= @address %> </h1>
-				<h1>Contact Number: <%= @user.contact_num %> </h1>
-				<h1>Institution: <%= @user.institution %> </h1>
-				<h1>Age: <%= @user.age %> </h1>
-				<h1>Level: <%= @user.level %> </h1>
-				<h1>Degree Program: <%= @user.degree_program %> </h1>
-				<h1>Created at: <%= @current_user.created_at %></h1>
+				<table class="profile">
+					<tr class="row">
+						<td class="label">Username</td>
+						<td class="data"><%= current_user.username %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Email</td>
+						<td class="data"><%= current_user.email %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Name</td>
+						<td class="data"><%= @user.name %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Gender</td>
+						<td class="data"><%= @user.gender %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Address</td>
+						<td class="data"><%= @address %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Contact Number</td>
+						<td class="data"><%= @user.contact_num %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Institution</td>
+						<td class="data"><%= @user.institution %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Age</td>
+						<td class="data"><%= @user.age %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Level</td>
+						<td class="data"><%= @user.level %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Degree Program</td>
+						<td class="data"><%= @user.degree_program %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Date Created</td>
+						<td class="data"><%= @current_user.created_at %></td>
+					</tr>
+				</table>
 				<%= link_to 'Delete', delete_accounts_path, method: :delete %>
 			</div>
 		</div>

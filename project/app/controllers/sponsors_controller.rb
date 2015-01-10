@@ -31,7 +31,7 @@ class SponsorsController < ApplicationController
 				redirect_to new_sponsor_path(@account.tag)
 			end
 		else
-			flash[:error] = (not @account.valid?) ? @account.errors.full_messages.first : @sponso.errors.full_messages.first
+			flash[:error] = (not @account.valid?) ? @account.errors.full_messages.first : @sponsor.errors.full_messages.first
 			redirect_to new_sponsor_path(@account.tag)
 		end
 	end
