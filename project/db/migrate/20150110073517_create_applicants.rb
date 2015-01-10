@@ -1,6 +1,7 @@
 class CreateApplicants < ActiveRecord::Migration
   def change
     create_table :applicants do |t|
+        t.belongs_to :accounts, index: true
     	t.string :name
     	t.string :gender
     	t.integer :add_id

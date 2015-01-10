@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   end
 
   create_table "applicants", force: true do |t|
+    t.integer "accounts_id"
     t.string  "name"
     t.string  "gender"
     t.integer "add_id"
@@ -46,6 +47,8 @@ ActiveRecord::Schema.define(version: 20150110082255) do
     t.string  "level"
     t.string  "degree_program"
   end
+
+  add_index "applicants", ["accounts_id"], name: "index_applicants_on_accounts_id", using: :btree
 
   create_table "scholarships", force: true do |t|
     t.integer  "sc_id"
@@ -65,9 +68,12 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   end
 
   create_table "sponsors", force: true do |t|
+    t.integer "accounts_id"
     t.string  "institution_name"
     t.string  "add_id"
     t.integer "contact_num"
   end
+
+  add_index "sponsors", ["accounts_id"], name: "index_sponsors_on_accounts_id", using: :btree
 
 end
