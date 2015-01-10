@@ -1,5 +1,7 @@
 class Applicant < ActiveRecord::Base
 
+	has_one :address, :dependent=>:destroy
+
 	validates_presence_of :name
 	validates_presence_of :gender
 	validates_presence_of :contact_num
