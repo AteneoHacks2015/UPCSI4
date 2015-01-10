@@ -5,7 +5,6 @@ class CreateSponsors < ActiveRecord::Migration
       t.string :institution_name
       t.string :add_id
       t.integer :contact_num
-      t.string :email_add
     end
   end
 end
