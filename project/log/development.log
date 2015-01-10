@@ -148,3 +148,42 @@ Migrations are pending. To resolve this issue, run:
   Rendered /home/cjaybillones/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
   Rendered /home/cjaybillones/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
   Rendered /home/cjaybillones/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+  [1m[36m (316.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (413.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAccounts (20150110073434)
+  [1m[35m (284.1ms)[0m  CREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `tag` int(11), `username` varchar(255), `email` varchar(255), `password_hash` varchar(255), `password_salt` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150110073434')
+  [1m[36m (37.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateApplicants (20150110073517)
+  [1m[35m (210.8ms)[0m  CREATE TABLE `applicants` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150110073517')
+  [1m[36m (30.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSponsors (20150110073604)
+  [1m[35m (199.5ms)[0m  CREATE TABLE `sponsors` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150110073604')
+  [1m[36m (30.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateScholarships (20150110073628)
+  [1m[35m (299.3ms)[0m  CREATE TABLE `scholarships` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150110073628')
+  [1m[36m (32.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateApplicantScholarshipJoins (20150110073743)
+  [1m[35m (231.1ms)[0m  CREATE TABLE `applicant_scholarship_joins` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150110073743')
+  [1m[36m (30.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSponsorScholarshipJoins (20150110073758)
+  [1m[35m (267.2ms)[0m  CREATE TABLE `sponsor_scholarship_joins` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150110073758')
+  [1m[36m (41.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20150110082255)
+  [1m[35m (222.2ms)[0m  CREATE TABLE `addresses` (`id` int(11) auto_increment PRIMARY KEY, `region` varchar(255), `province` varchar(255), `municipality` varchar(255), `street` varchar(255), `block` varchar(255)) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150110082255')
+  [1m[36m (19.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
