@@ -1,5 +1,19 @@
 <div style="padding-top: 100px">
 	<h1>Scholarship</h1>
 	<%= @id %>
+	<h1>Title: <%= @scholarship.title %> </h1>
+	<h1>Description: <%= @scholarship.desc %> </h1>
+	<h1>Slot: <%= @scholarship.slot %> </h1>
+	<h1>Demand: <%= @scholarship.demand %> </h1>
+	<h1>Requirements: <%= @scholarship.req %> </h1>
+	<h1>Benefits: <%= @scholarship.ben %> </h1>
+	<h1>Applicant Restriction: <%= @scholarship.app_res %> </h1>
+	<h1>Created At: <%= @scholarship.created_at %> </h1>
+
+	<% if current_user.tag == 0 %>
+	<%= link_to 'Back', applicants_path %>
+	<%else%>
 	<%= link_to 'Back', sponsors_path %>
+	<%end%>
+
 </div>

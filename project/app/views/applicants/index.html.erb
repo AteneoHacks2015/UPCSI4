@@ -12,7 +12,7 @@
 	<% @scholarships.each_with_index do |x, index| %>
 	<tr>
 		<td><%= index+1 %></td>
-		<td><%= x.title %></td>
+		<td><%= link_to x.title, view_scholarships_path(:id=>x.id), method: :get%></td>
 		<td><%= @sponsors[index].institution_name %></td>
 	</tr>
 	<% end %>
