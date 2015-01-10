@@ -20,6 +20,7 @@ class ScholarshipsController < ApplicationController
 
 	def view
 		@id = params[:id]
+		@scholarship = Scholarship.where(id:@id).first
 	end
 
 	private
