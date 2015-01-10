@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :applicants do
     collection do
       get 'profile', to: 'applicants#profile'
+      post 'apply', to: 'applicants#apply'
     end
   end
 
@@ -26,7 +27,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :scholarships
+  resources :scholarships do
+    collection do
+      get 'view', to: 'scholarships#view'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

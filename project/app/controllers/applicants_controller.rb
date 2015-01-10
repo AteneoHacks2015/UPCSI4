@@ -1,6 +1,15 @@
 class ApplicantsController < ApplicationController
 
 	def index
+		@scholarships = Scholarship.all
+		@sp_sch = Array.new
+		@scholarships.each do |x|
+			@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+		end
+		@sponsors = Array.new
+		@sp_sch.each do |x|
+			@sponsors.push(Sponsor.where(id:x.sp_id).first)
+		end
 	end
 
 	def new
@@ -36,6 +45,18 @@ class ApplicantsController < ApplicationController
 		@user = Applicant.where(accounts_id:current_user.id).first
 		@add = Address.where(id:@user.add_id).first
 		@address = @add.block + " " + @add.street + " " + @add.municipality + ", " + @add.province + " " + @add.region
+	end
+
+	def apply
+		@user = Applicant.where(accounts_id:current_user.id).first
+		@sch_id = params[:sch_id]
+		@app_sch = ApplicantScholarshipJoin.create(app_id:@user.id,sch_id:@sch_id)
+
+		@scholarship = Scholarship.where(id:@sch_id).first
+		@scholarship.demand += 1
+		@scholarship.save
+
+		redirect_to :root
 	end
 
 	private

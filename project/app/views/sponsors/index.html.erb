@@ -2,10 +2,21 @@
 	<h1>Sponsor</h1>
 
 	<h1>List of scholarships: </h1>
-	<% @scholarships.each do |x| %>
 
-		<h1><%= x.title %></h1>
-	<% end %>
+	<table border="1" frame="border" rules="all">
+	  
+	  <tr>
+	  	<th width="5%">No.</th>
+	    <th width="50%">Scholarship Title</th>
+	  </tr>
+
+		<% @scholarships.each_with_index do |x, index| %>
+			<tr>
+				<td><%= index+1 %></td>
+				<td><%= link_to x.title, view_scholarships_path(:id=>x.id), method: :get%></td>
+			</tr>
+		<% end %>
+	</table>
 
 	<%= link_to 'Add Scholarship', new_scholarship_path%>
 </div>
