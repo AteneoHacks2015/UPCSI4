@@ -1,0 +1,32 @@
+<%= form_tag :role=>'form', :action=>'create' do %>
+	
+	<% @tag = params[:tag].to_i %>
+	<% @unameholder = (@tag==0) ? 'applicant1' : 'sponsor1' %>
+	<% @emailholder = (@tag==0) ? 'applicant1@gmail.com' : 'sponsor1@gmail.com' %>
+
+	<%= hidden_field :accounts, :tag, :value=>@tag %>
+
+	<div>
+		<%= label :accounts, 'Username' %>
+		<%= text_field :accounts, :accountsname, :value=>@username, placeholder:@unameholder %>
+	</div>
+
+	<div>
+		<%= label :accounts, 'Email' %>
+		<%= text_field :accounts, :email, :value=>@email, placeholder:@emailholder %>
+	</div>
+
+	<div>
+		<%= label :accounts, 'Password' %>
+		<%= password_field :accounts, :password, placeholder:'********' %>
+	</div>
+
+	<div>
+		<%= label :accounts, 'Confirm Password' %>
+		<%= password_field :accounts, :password_confirmation, placeholder:'********' %>
+	</div>
+
+	<div>
+		<%= button_tag 'Create Account', :type=>'submit' %>
+	</div>
+<% end %>
