@@ -24,17 +24,12 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   end
 
   create_table "addresses", force: true do |t|
-    t.integer "applicant_id"
-    t.integer "sponsor_id"
-    t.string  "region"
-    t.string  "province"
-    t.string  "municipality"
-    t.string  "street"
-    t.string  "block"
+    t.string "region"
+    t.string "province"
+    t.string "municipality"
+    t.string "street"
+    t.string "block"
   end
-
-  add_index "addresses", ["applicant_id"], name: "index_addresses_on_applicant_id", using: :btree
-  add_index "addresses", ["sponsor_id"], name: "index_addresses_on_sponsor_id", using: :btree
 
   create_table "applicant_scholarship_joins", force: true do |t|
     t.integer "app_id"
