@@ -1,20 +1,24 @@
 class SponsorsController < ApplicationController
 
 	def new
-		@name = params[:name]
-		@username = params[:username]
-		@email = params[:email]
 		@tag = params[:tag]
 	end
 
 	def create
 		@account = Accounts.new(accounts_params)
-		@user = Sponsor.new(sponsor_params)
+		@sponsor = Sponsor.new(sponsor_params)
 
-		if @account.valid?
-			render plain: params[:accounts].inspect
+		if @account.valid? and @sponsor.valid?
+			@address = Address.new(address_params)
+			if @address.valid?
+				render plain: params[:sponsor].inspect
+			else
+				flash[:error] = @address.errors.full_messages.first
+				redirect_to new_sponsor_path(@account.tag)
+			end
 		else
-			flash[:error] = @account.errors.full_messages.first
+			flash[:error] = (not @account.valid?) ? @account.errors.full_messages.first : @sponso.errors.full_messages.first
+			redirect_to new_sponsor_path(@account.tag)
 		end
 	end
 
@@ -25,6 +29,10 @@ class SponsorsController < ApplicationController
 
 		def sponsor_params
 			params.require(:sponsor).permit(:institution_name, :contact_num)
+		end
+
+		def address_params
+			params.require(:address).permit(:region, :province, :municipality, :street, :block)
 		end
 
 end

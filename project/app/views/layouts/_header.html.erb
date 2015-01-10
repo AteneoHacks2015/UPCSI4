@@ -1,0 +1,26 @@
+	<div id="header" class="fullwidth">
+		<div class="fixedwidth">
+			<span id="header-logo" class="left">
+				eskolarship
+			</span>
+			<span id="nav-list" class="right">
+				<% if current_user %>
+					<% if current_user.tag == 0 %>
+						<%= link_to 'Home', applicants_path,
+						method: :get, class: "nav-item left" %>
+					<% else %>
+						<%= link_to 'Home', users_path,
+						method: :get, class: "nav-item left" %>						
+					<% end %>
+					<%= link_to 'logout', logout_accounts_path, method: :post %>
+				<% else %>
+					<%= link_to 'Home', root_path,
+						method: :get, class: "nav-item left" %>
+					<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
+						method: :get, class: "nav-item left" %>
+					<%= link_to 'Be A Sponsor', new_sponsor_path(:tag=>1),
+						method: :get, class: "nav-item left" %>
+				<% end %>
+			</span>
+		</div>
+	</div>
