@@ -8,6 +8,19 @@ class AccountsController < ApplicationController
 	end
 
 	def signin
+		username = params[:user][:username]
+		password = params[:user][:password]
+
+		user = Accounts.authenticate(username, password)
+
+		if user
+			session[:user_id] = user.id
+			@user = (current_user.tag == 0)? Applicant.where(user_id:current_user.id).first : Sponsor.where(user_id:current_user.id).first
+			redirect_to :root
+		else
+			flash[:error] = "Please check you username or password."
+			redirect_to login_accounts_path
+		end				
 	end
 
 	def logout

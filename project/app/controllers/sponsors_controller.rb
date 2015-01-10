@@ -5,11 +5,11 @@ class SponsorsController < ApplicationController
 		@username = params[:username]
 		@email = params[:email]
 		@tag = params[:tag]
-		@account_id = (Accounts.last != nil) ? Accounts.last+1:1 
 	end
 
 	def create
 		@account = Accounts.new(accounts_params)
+		@user = Sponsor.new(sponsor_params)
 
 		if @account.valid?
 			render plain: params[:accounts].inspect
@@ -20,7 +20,11 @@ class SponsorsController < ApplicationController
 
 	private
 		def accounts_params
-			params.require(:accounts).permit(:username, :email, :password, :password_confirmation)
+			params.require(:accounts).permit(:tag, :username, :email, :password, :password_confirmation)
+		end
+
+		def sponsor_params
+			params.require(:sponsor).permit(:institution_name, :contact_num)
 		end
 
 end
