@@ -11,7 +11,12 @@ class SponsorsController < ApplicationController
 		if @account.valid? and @sponsor.valid?
 			@address = Address.new(address_params)
 			if @address.valid?
-				render plain: params[:sponsor].inspect
+				@account.save
+				@address.save
+				@sponsor.accounts_id = @account.id
+				@sponsor.add_id = @address.id
+				@sponsor.save
+				redirect_to login_accounts_path
 			else
 				flash[:error] = @address.errors.full_messages.first
 				redirect_to new_sponsor_path(@account.tag)

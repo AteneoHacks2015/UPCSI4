@@ -4,7 +4,7 @@ class CreateSponsors < ActiveRecord::Migration
 			t.belongs_to :accounts, index: true   	
       t.string :institution_name
       t.string :add_id
-      t.integer :contact_num
+      t.string :contact_num
     end
   end
 end

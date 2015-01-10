@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150110082255) do
     t.integer "accounts_id"
     t.string  "institution_name"
     t.string  "add_id"
-    t.integer "contact_num"
+    t.string  "contact_num"
   end
 
   add_index "sponsors", ["accounts_id"], name: "index_sponsors_on_accounts_id", using: :btree
