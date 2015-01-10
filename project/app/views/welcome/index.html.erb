@@ -1,65 +1,61 @@
-<h1>Index</h1>
-
-<%= link_to 'login', login_accounts_path, method: :get %>
-			<%= link_to 'sign up as applicant', new_applicant_path(:tag=>0), method: :get %>
-			<%= link_to 'sign up as sponsor', new_sponsor_path(:tag=>1), method: :get %>
-
-<div id="header" class="fullwidth">
-	<div class="fixedwidth">
-		<span id="header-logo" class="left">
-			eskolarship
-		</span>
-		<span id="nav-list" class="right">
-			<%= link_to 'Login', login_accounts_path,
-				method: :get, class: "nav-item left" %>
-			<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
-				method: :get, class: "nav-item left" %>
-			<%= link_to 'Be A Sponsor', new_sponsor_path(:tag=>1),
-				method: :get, class: "nav-item left" %>
-		</span>
-	</div>
-</div>
-<div id="content">
-	<div class="content-section section-1" class="fullwidth">
+<div id="welcome">
+	<div id="header" class="fullwidth">
 		<div class="fixedwidth">
-			<span class="title left">
+			<span id="header-logo" class="left">
 				eskolarship
 			</span>
-			<span class="desc left">
-				streamlining students' scholarship applications
+			<span id="nav-list" class="right">
+				<%= link_to 'Login', login_accounts_path,
+					method: :get, class: "nav-item left" %>
+				<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
+					method: :get, class: "nav-item left" %>
+				<%= link_to 'Be A Sponsor', new_sponsor_path(:tag=>1),
+					method: :get, class: "nav-item left" %>
 			</span>
 		</div>
 	</div>
-	<div class="content-section section-2" class="fullwidth">
-		<div class="fixedwidth">
-			<span class="title right">
-				Be a scholar
-			</span>
-			<span class="desc right">
-				find the right scholarship for you
-			</span>
+	<div id="content">
+		<div class="content-section section-1" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title left">
+					eskolarship
+				</span>
+				<span class="desc left">
+					streamlining student scholarship applications
+				</span>
+			</div>
 		</div>
-	</div>
-	<div class="content-section section-3" class="fullwidth">
-		<div class="fixedwidth">
-			<span class="title left">
-				Be a sponsor
-			</span>
-			<span class="desc left">
-				reach out to those in need
-			</span>
+		<div class="content-section section-2" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title right">
+					Be a scholar
+				</span>
+				<span class="desc right">
+					find the right scholarship for you
+				</span>
+			</div>
 		</div>
-	</div>
-	<div class="content-section section-4" class="fullwidth">
-		<div class="fixedwidth">
-			Already a member?
-			<%= link_to 'Sign in', login_accounts_path,
-				method: :get %>.
+		<div class="content-section section-3" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title left">
+					Be a sponsor
+				</span>
+				<span class="desc left">
+					reach out to those in need
+				</span>
+			</div>
 		</div>
-	</div>
-	<div id="footer" class="fullwidth">
-		<div class="fixedwidth">
-			&copy; UPCSI4 Ateneo Hacks 2015
+		<div class="content-section section-4" class="fullwidth">
+			<div class="fixedwidth">
+				Already a member?
+				<%= link_to 'Sign in', login_accounts_path,
+					method: :get %>.
+			</div>
+		</div>
+		<div id="footer" class="fullwidth">
+			<div class="fixedwidth">
+				&copy; UPCSI4 Ateneo Hacks 2015
+			</div>
 		</div>
 	</div>
 </div>

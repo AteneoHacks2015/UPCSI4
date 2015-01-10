@@ -1,0 +1,102 @@
+// ------------------------------------------------------------------------ {{ Section: Variables }}
+/* Responsive Design Breakpoints */
+$media: (
+	mobile "(max-width: 639px)",
+	small "(min-width: 640px) and (max-width: 959px)",
+	medium "(min-width: 960px) and (max-width: 1199px)",
+	large "(min-width: 1200px) and (max-width: 1599px)",
+	xlarge "(min-width: 1600px)"
+);
+
+// --------------------------------------------------------------------------- {{ Section: Mixins }}
+/* Color Scheme: On the Sly (http://www.colourlovers.com/palette/2261749/On_the_Sly)
+	#21252E
+	#FAD42B
+	#E42535
+	#FFDCAC
+	#21252E
+*/
+@mixin color-scheme($scheme) {
+	@if $scheme == header {
+		background-color: #21252E;
+		color: rgba(255,255,255,0.625);
+	} @else if $scheme == content-1 {
+		background-color: #21252E;
+		color: rgba(255,255,255,0.625);
+	} @else if $scheme == content-2 {
+		background-color: #FAD42B;
+		color: rgba(0,0,0,0.625);
+	} @else if $scheme == content-3 {
+		background-color: #E42535;
+		color: rgba(255,255,255,0.7);
+	} @else if $scheme == content-4 {
+		background-color: #FFDCAC;
+		color: rgba(0,0,0,0.625);
+	} @else if $scheme == footer {
+		background-color: #21252E;
+		color: rgba(255,255,255,0.625);
+	}
+}
+
+/* Transitions Mixin */
+@mixin transition($preset) {
+	@if $preset == preset-1 {
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+}
+
+/* Cross-browser Calc Mixin */
+@mixin calc($key, $value) {
+	#{$key}: -webkit-calc(#{unquote($value)});
+	#{$key}: -moz-calc(#{unquote($value)});
+	#{$key}: -o-calc(#{unquote($value)});
+	#{$key}: calc(#{unquote($value)});
+}
+
+/* Responsive Design Mixins */
+@mixin respond-to($target) {
+	@each $medium in $media {
+		@if nth($medium, 1) == $target {
+			@media #{nth($medium, 2)} {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin responsive-key($key, $contents) {
+	@each $content in $contents {
+		@include respond-to(nth($content, 1)) {
+			#{$key}: #{nth($content, 2)};
+		}
+	}
+}
+
+// -------------------------------------------------------------------- {{ Section: Global Styles }}
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+
+body {
+	min-width: 480px;
+	font: 300 16px "Roboto";
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.fixedwidth {
+	margin: auto;
+	@include responsive-key(width, (mobile 480px,
+		small 640px, medium 960px, large 1200px, xlarge 1600px));
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
