@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150110082255) do
     t.integer "age"
     t.string  "level"
     t.string  "degree_program"
-    t.string  "email_add"
   end
 
   create_table "scholarships", force: true do |t|
@@ -70,7 +69,6 @@ ActiveRecord::Schema.define(version: 20150110082255) do
     t.string  "institution_name"
     t.string  "add_id"
     t.integer "contact_num"
-    t.string  "email_add"
   end
 
 end
