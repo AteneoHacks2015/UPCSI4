@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   resources :scholarships do
     collection do
       get 'view', to: 'scholarships#view'
+      post 'edit', to: 'scholarships#edit'
     end
   end
 

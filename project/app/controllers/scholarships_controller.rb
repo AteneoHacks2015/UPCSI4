@@ -32,6 +32,22 @@ class ScholarshipsController < ApplicationController
 		@scholarship = Scholarship.where(id:@id).first
 	end
 
+	def update
+		@scholarship = Scholarship.where(id:params[:accounts][:id]).first
+		if @scholarship.valid?
+			@scholarship.title = params[:scholarships][:title]
+			@scholarship.desc = params[:scholarships][:desc]
+			@scholarship.slot = params[:scholarships][:slot]
+			@scholarship.demand = params[:scholarships][:demand]
+			@scholarship.req = params[:scholarships][:req]
+			@scholarship.ben = params[:scholarships][:ben]
+			@scholarship.app_res = params[:scholarships][:app_res]
+			@scholarship.save
+			redirect_to :root
+		end
+
+	end
+
 	private
 		def scholarships_params
 			params.require(:scholarships).permit(:title, :desc, :slot, :req, :ben, :app_res)

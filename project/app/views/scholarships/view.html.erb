@@ -1,13 +1,26 @@
 <div style="padding-top: 100px">
 	<h1>Scholarship</h1>
-	<h1>Title: <%= @scholarship.title %> </h1>
-	<h1>Description: <%= @scholarship.desc %> </h1>
-	<h1>Slot: <%= @scholarship.slot %> </h1>
-	<h1>Demand: <%= @scholarship.demand %> </h1>
-	<h1>Requirements: <%= @scholarship.req %> </h1>
-	<h1>Benefits: <%= @scholarship.ben %> </h1>
-	<h1>Applicant Restriction: <%= @scholarship.app_res %> </h1>
-	<h1>Created At: <%= @scholarship.created_at %> </h1>
+
+	<% if current_user.tag == 1 %>
+		<%= form_for @scholarship, :role=>'form',:as=>:scholarships, :url=>scholarship_path(@scholarship) do |f| %>
+			<%= hidden_field :accounts, :id, :value=>@id %>
+			<%= f.text_field :title %>
+			<%= f.label 'Title' %>
+			<%= f.text_field :desc %>
+			<%= f.label 'Description' %>
+			<%= f.text_field :slot %>
+			<%= f.label 'Slot' %>
+			<%= f.text_field :demand %>
+			<%= f.label 'Demand' %>
+			<%= f.text_field :req %>
+			<%= f.label 'Requirements' %>
+			<%= f.text_field :ben %>
+			<%= f.label 'Benefits' %>
+			<%= f.text_field :app_res %>
+			<%= f.label 'Applicant Restriction' %>	
+			<%= f.submit 'Submit' %>
+		<%end %>
+	<% end %>
 
 
 
