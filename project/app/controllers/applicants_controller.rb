@@ -1,6 +1,15 @@
 class ApplicantsController < ApplicationController
 
 	def index
+		@scholarships = Scholarship.all
+		@sp_sch = Array.new
+		@scholarships.each do |x|
+			@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+		end
+		@sponsors = Array.new
+		@sp_sch.each do |x|
+			@sponsors.push(Sponsor.where(id:x.sp_id).first)
+		end
 	end
 
 	def new
