@@ -26,7 +26,7 @@
 			<div class="fixedwidth">
 				<%= form_tag :role=>'form', :action=>'create' do %>
 					<%= hidden_field :accounts, :tag, :value=>@tag %>
-						<%= text_field :accounts, :accountsname, :value=>@username, placeholder:@unameholder %>
+						<%= text_field :accounts, :username, :value=>@username, placeholder:@unameholder %>
 						<%= label :accounts, 'Username' %>
 						<%= text_field :accounts, :email, :value=>@email, placeholder:@emailholder %>
 						<%= label :accounts, 'Email' %>
@@ -34,7 +34,32 @@
 						<%= label :accounts, 'Password' %>
 						<%= password_field :accounts, :password_confirmation, placeholder:'********' %>
 						<%= label :accounts, 'Confirm Password' %>
+
+						<!--
+						+------------------+--------------+------+-----+---------+----------------+
+						| Field            | Type         | Null | Key | Default | Extra          |
+						+------------------+--------------+------+-----+---------+----------------+
+						| id               | int(11)      | NO   | PRI | NULL    | auto_increment |
+						| institution_name | varchar(255) | YES  |     | NULL    |                |
+						| add_id           | varchar(255) | YES  |     | NULL    |                |
+						| contact_num      | int(11)      | YES  |     | NULL    |                |
+						+------------------+--------------+------+-----+---------+----------------+
+						-->
+
+						<!-- add forms specific for sponsors -->
+						<%= text_field :sponsors, :institution_name%>
+						<%= label :sponsors, 'Institution Name' %>
+
+						<%= text_field :sponsors, :add_id%>
+						<%= label :sponsors, 'Address ID' %>
+						
+						<%= text_field :sponsors, :contact_num%>
+						<%= label :sponsors, 'Contact Number' %>
+						
+						<!-- add forms specific for sponsors -->
+
 						<%= button_tag 'Create Account', :type=>'submit' %>
+
 				<% end %>
 			</div>
 		</div>
