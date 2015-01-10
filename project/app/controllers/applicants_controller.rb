@@ -33,6 +33,9 @@ class ApplicantsController < ApplicationController
 	end
 
 	def profile
+		@user = Applicant.where(accounts_id:current_user.id).first
+		@add = Address.where(id:@user.add_id).first
+		@address = @add.block + " " + @add.street + " " + @add.municipality + ", " + @add.province + " " + @add.region
 	end
 
 	private
