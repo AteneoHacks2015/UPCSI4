@@ -50,8 +50,39 @@
 						<%= text_field :sponsors, :institution_name%>
 						<%= label :sponsors, 'Institution Name' %>
 
-						<%= text_field :sponsors, :add_id%>
-						<%= label :sponsors, 'Address ID' %>
+
+						<!--
+						mysql> describe addresses;
+						+--------------+--------------+------+-----+---------+----------------+
+						| Field        | Type         | Null | Key | Default | Extra          |
+						+--------------+--------------+------+-----+---------+----------------+
+						| id           | int(11)      | NO   | PRI | NULL    | auto_increment |
+						| region       | varchar(255) | YES  |     | NULL    |                |
+						| province     | varchar(255) | YES  |     | NULL    |                |
+						| municipality | varchar(255) | YES  |     | NULL    |                |
+						| street       | varchar(255) | YES  |     | NULL    |                |
+						| block        | varchar(255) | YES  |     | NULL    |                |
+						+--------------+--------------+------+-----+---------+----------------+
+ 
+						-->
+
+						<!-- fields for address -->
+						<%= text_field :addresses, :region%>
+						<%= label :addresses, 'Region' %>
+						
+						<%= text_field :addresses, :province%>
+						<%= label :addresses, 'Province' %>
+						
+						<%= text_field :addresses, :municipality%>
+						<%= label :addresses, 'Municipality' %>
+
+						<%= text_field :addresses, :street%>
+						<%= label :addresses, 'Street' %>
+						
+						<%= text_field :addresses, :province%>
+						<%= label :addresses, 'Block' %>
+						
+						<!-- fields for address -->
 						
 						<%= text_field :sponsors, :contact_num%>
 						<%= label :sponsors, 'Contact Number' %>
