@@ -29,4 +29,9 @@ class AccountsController < ApplicationController
 		redirect_to :root		
 	end
 
+	def destroy
+		@user = Accounts.where(id:current_user.id).first.destroy
+		redirect_to :root
+	end
+
 end

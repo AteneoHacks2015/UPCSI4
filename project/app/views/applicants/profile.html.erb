@@ -12,6 +12,8 @@
 	<h1>Level: <%= @user.level %> </h1>
 	<h1>Degree Program: <%= @user.degree_program %> </h1>
 	<h1>Created at: <%= @current_user.created_at %></h1>
+
+	<%= link_to 'Delete', delete_accounts_path, method: :delete %>
 	
 
 </div>

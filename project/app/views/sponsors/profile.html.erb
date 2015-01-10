@@ -7,5 +7,6 @@
 	<h1>Address: <%= @address %> </h1>
 	<h1>Contact Number: <%= @user.contact_num %> </h1>
 	<h1>Created at: <%= @current_user.created_at %></h1>
+	<%= link_to 'Delete', delete_accounts_path, method: :delete %>
 
 </div>
