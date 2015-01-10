@@ -15,3 +15,4 @@ while i < 5
 	applicant = Applicant.create accounts_id:account.id, name:'applicant'+i.to_s, gender:gender, add_id:address.id, contact_num:'09221234567', institution:'UPD', age:19, level:level, degree_program:'BS CS'		
 	i = i+1
 end
+
