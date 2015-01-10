@@ -32,20 +32,45 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   end
 
   create_table "applicant_scholarship_joins", force: true do |t|
+    t.integer "app_id"
+    t.integer "sch_id"
   end
 
   create_table "applicants", force: true do |t|
+    t.string  "name"
+    t.string  "gender"
+    t.integer "add_id"
+    t.string  "contact_num"
+    t.string  "institution"
+    t.integer "age"
+    t.string  "level"
+    t.string  "degree_program"
+    t.string  "email_add"
   end
 
   create_table "scholarships", force: true do |t|
+    t.integer  "sc_id"
+    t.string   "title"
+    t.string   "desc"
+    t.integer  "slot"
+    t.string   "req"
+    t.string   "ben"
+    t.string   "app_res"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sponsor_scholarship_joins", force: true do |t|
+    t.integer "sp_id"
+    t.integer "sch_id"
   end
 
   create_table "sponsors", force: true do |t|
+    t.integer "s_id"
+    t.string  "institution_name"
+    t.string  "add_id"
+    t.integer "contact_num"
+    t.string  "email_add"
   end
 
 end
