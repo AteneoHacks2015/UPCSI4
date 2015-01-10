@@ -294,3 +294,19 @@ body {
 		}
 	}
 }
+
+table.profile {
+	.label {
+		padding: 5px 25px 5px 0px;
+		text-align: right;
+		font-family: "Roboto Condensed";
+		font-size: 70%;
+	}
+
+	.data {
+		padding: 5px 0px 5px 25px;
+		text-align: left;
+		font-size: 90%;
+		border-left: 1px solid rgba(0,0,0,0.1);
+	}
+}
