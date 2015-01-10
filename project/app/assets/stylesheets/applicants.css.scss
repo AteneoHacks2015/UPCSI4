@@ -144,7 +144,29 @@
 				font-size: 100%;
 				text-transform: uppercase;
 			}
+
 			button:hover {
+				background: rgba(0,0,0,0.15);
+			}
+
+			select {
+				display: block;
+				margin: auto;
+				width: 90%;
+				max-width: 960px;
+				padding: 10px 0px;
+				border: none;
+				border: 1px solid rgba(0,0,0,0.25);
+				background: none;
+				background: rgba(0,0,0,0.05);
+				text-align: center;
+				font-family: "Roboto";
+				font-weight: 300;
+				font-size: 100%;
+				text-transform: uppercase;
+			}
+
+			select:hover {
 				background: rgba(0,0,0,0.15);
 			}
 		}
