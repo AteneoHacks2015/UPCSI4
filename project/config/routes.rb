@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :applicants
+  resources :applicants do
+    collection do
+      get 'profile', to: 'applicants#profile'
+    end
+  end
   resources :sponsors
   resources :scholarships
 

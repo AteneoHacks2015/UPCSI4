@@ -4,7 +4,7 @@ class ApplicantsController < ApplicationController
 	end
 
 	def new
-		@tag = params[:tag]
+		@tag = params[:tag].to_i
 		@gender_options = ["Male","Female"]
 		@level_options = ["High School", "College"]
 	end
@@ -30,6 +30,9 @@ class ApplicantsController < ApplicationController
 			flash[:error] = (not @account.valid?) ? @account.errors.full_messages.first : @applicant.errors.full_messages.first
 			redirect_to new_applicant_path(@account.tag)
 		end
+	end
+
+	def profile
 	end
 
 	private
