@@ -14,13 +14,13 @@ class ApplicantsController < ApplicationController
 		if @account.valid?
 			render plain: params[:accounts].inspect
 		else
-			redirect_to new_applicant_path(:tag=>0)
+			flash[:error] = @account.errors.full_messages.first
 		end
 	end
 
 	private
 		def accounts_params
-			params.require(:accounts).permit(:tag, :username, :email, :password, :password_confirmation)
+			params.require(:accounts).permit(:username, :email, :password, :password_confirmation)
 		end
 
 end
