@@ -4,7 +4,7 @@ class ScholarshipsController < ApplicationController
 	end
 
 	def create
-		render plain: params[:scholarship].inspect
+		render plain: params[:scholarships].inspect
 	end
 
 end
