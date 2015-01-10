@@ -1,7 +1,7 @@
 class SponsorsController < ApplicationController
 
 	def new
-		@tag = params[:tag]
+		@tag = params[:tag].to_i
 	end
 
 	def create
@@ -25,6 +25,9 @@ class SponsorsController < ApplicationController
 			flash[:error] = (not @account.valid?) ? @account.errors.full_messages.first : @sponso.errors.full_messages.first
 			redirect_to new_sponsor_path(@account.tag)
 		end
+	end
+
+	def profile
 	end
 
 	private

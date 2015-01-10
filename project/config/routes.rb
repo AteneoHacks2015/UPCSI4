@@ -18,7 +18,13 @@ Rails.application.routes.draw do
       get 'profile', to: 'applicants#profile'
     end
   end
-  resources :sponsors
+
+  resources :sponsors do
+    collection do
+      get 'profile', to: 'sponsors#profile'
+    end
+  end
+  
   resources :scholarships
 
   # Example of regular route:
