@@ -1,5 +1,7 @@
 class ApplicantsController < ApplicationController
 
+	before_filter :deny_access, :unless => :applicant?, :except => [:new, :create]
+
 	def index
 		@scholarships = Scholarship.all
 		@sp_sch = Array.new

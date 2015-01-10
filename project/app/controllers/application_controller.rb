@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def applicant?
-    current_user.tag == 0
+    current_user != nil and current_user.tag == 0
   end
 
   def deny_access
