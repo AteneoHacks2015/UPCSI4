@@ -4,6 +4,15 @@ class SponsorsController < ApplicationController
 		@tag = params[:tag].to_i
 	end
 
+	def index
+		@user = Sponsor.where(accounts_id:current_user.id).first
+		@sp_sch = SponsorScholarshipJoin.where(sp_id:@user.id)
+		@scholarships = Array.new
+		@sp_sch.each do |x|
+			@scholarships.push(Scholarship.where(id:x.sch_id).first)
+		end
+	end
+
 	def create
 		@account = Accounts.new(accounts_params)
 		@sponsor = Sponsor.new(sponsor_params)

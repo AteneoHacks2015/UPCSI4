@@ -1,5 +1,5 @@
 class SponsorScholarshipJoin < ActiveRecord::Base
 
-	def create
-	end
+	validates_presence_of :sp_id
+	validates_presence_of :sch_id
 end

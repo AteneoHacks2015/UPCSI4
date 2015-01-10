@@ -1,5 +1,11 @@
 <div style="padding-top: 100px">
 	<h1>Sponsor</h1>
 
+	<h1>List of scholarships: </h1>
+	<% @scholarships.each do |x| %>
+
+		<h1><%= x.title %></h1>
+	<% end %>
+
 	<%= link_to 'Add Scholarship', new_scholarship_path%>
 </div>
