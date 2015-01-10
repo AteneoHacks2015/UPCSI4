@@ -10,8 +10,7 @@
 						method: :get, class: "nav-item left" %>
 						<%= link_to 'Profile', profile_applicants_path, method: :get %>
 					<% else %>
-						<%= link_to 'Home', sponsors_path,
-						method: :get, class: "nav-item left" %>
+						<%= link_to 'Home', sponsors_path, method: :get, class: "nav-item left" %>
 						<%= link_to 'Profile', profile_sponsors_path, method: :get %>
 					<% end %>
 					<%= link_to 'Logout', logout_accounts_path, method: :post %>
