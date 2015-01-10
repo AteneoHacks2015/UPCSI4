@@ -1,1 +1,81 @@
-<h1>Create Scholarship</h1>
+<div id="scholarships">
+	<div id="content">
+		<div class="content-section section-1" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title">
+					Create Scholarship
+				</span>
+			</div>
+		</div>
+		<div class="content-section section-2" class="fullwidth">
+			<div class="fixedwidth">
+				<%= form_tag :role=>'form', :action=>'create' do %>
+					<%= hidden_field :accounts, :tag, :value=>@tag %>
+
+						<!-- sample format
+						<%= text_field :accounts, :username, :value=>@username, placeholder:@unameholder %>
+						<%= label :accounts, 'Username' %>
+						<%= text_field :accounts, :email, :value=>@email, placeholder:@emailholder %>
+						<%= label :accounts, 'Email' %>
+						<%= password_field :accounts, :password, placeholder:'********' %>
+						<%= label :accounts, 'Password' %>
+						<%= password_field :accounts, :password_confirmation, placeholder:'********' %>
+						<%= label :accounts, 'Confirm Password' %>
+						-->
+
+						<%= text_field :scholarships, :title %>
+						<%= label :scholarships, 'Title' %>
+						
+						<%= text_field :scholarships, :desc%>
+						<%= label :scholarships, 'Description' %>
+						
+
+
+						<%= text_field :scholarships, :slot %>
+						<%= label :scholarships, 'Slots' %>
+						
+						<%= text_field :scholarships, :req %>
+						<%= label :scholarships, 'Requirements' %>
+						
+						<%= text_field :scholarships, :ben %>
+						<%= label :scholarships, 'Benefits' %>
+						
+
+
+						<%= text_field :scholarships, :app_res %>
+						<%= label :scholarships, 'Applicant Restriction' %>
+						
+
+						<!--
+						mysql> describe scholarships;
+						+------------+--------------+------+-----+---------+----------------+
+						| Field      | Type         | Null | Key | Default | Extra          |
+						+------------+--------------+------+-----+---------+----------------+
+						| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+						| sc_id      | int(11)      | YES  |     | NULL    |                |
+						| title      | varchar(255) | YES  |     | NULL    |                |
+						| desc       | varchar(255) | YES  |     | NULL    |                |
+						| slot       | int(11)      | YES  |     | NULL    |                |
+						| req        | varchar(255) | YES  |     | NULL    |                |
+						| ben        | varchar(255) | YES  |     | NULL    |                |
+						| app_res    | varchar(255) | YES  |     | NULL    |                |
+						| created_at | datetime     | YES  |     | NULL    |                |
+						| updated_at | datetime     | YES  |     | NULL    |                |
+						+------------+--------------+------+-----+---------+----------------+
+						10 rows in set (0.00 sec)
+ 
+						-->
+
+
+						<%= button_tag 'Create Scholarship', :type=>'submit' %>
+
+				<% end %>
+			</div>
+		</div>
+		<div id="footer" class="fullwidth">
+			<div class="fixedwidth">
+				&copy; UPCSI4 Ateneo Hacks 2015
+			</div>
+		</div>
+	</div>
+</div>
