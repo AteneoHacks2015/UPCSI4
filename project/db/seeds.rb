@@ -17,4 +17,3 @@ while i < 5
 	scholarship = Scholarship.create title:'scholarship'+i.to_s, desc:'Scholarship offer number '+i.to_s, slot: i, demand: i + 10, req: "hot", ben: "money", app_res: "female only"
 	i = i+1
 end
-	
