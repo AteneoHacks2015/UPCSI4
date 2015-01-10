@@ -29,4 +29,12 @@ class AccountsController < ApplicationController
 		redirect_to :root		
 	end
 
+	def destroy
+		@account = Accounts.where(id:current_user.id).first
+		@user = (@account.tag == 0) ? Applicant.where(accounts_id:current_user.id).first : Sponsor.where(accounts_id:current_user.id).first
+		@address = Address.where(id:@user.add_id).first.destroy
+		@account.destroy
+		redirect_to :root
+	end
+
 end

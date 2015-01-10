@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   add_index "applicants", ["accounts_id"], name: "index_applicants_on_accounts_id", using: :btree
 
   create_table "scholarships", force: true do |t|
-    t.integer  "sc_id"
     t.string   "title"
-    t.string   "desc"
+    t.text     "desc"
     t.integer  "slot"
-    t.string   "req"
-    t.string   "ben"
-    t.string   "app_res"
+    t.integer  "demand",     default: 0
+    t.text     "req"
+    t.text     "ben"
+    t.text     "app_res"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

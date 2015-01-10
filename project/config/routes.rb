@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'login', to: 'accounts#login'
       post 'login', to: 'accounts#signin'
       post 'logout', to: 'accounts#logout'
+      delete 'delete', to: 'accounts#destroy'
     end
   end
   
