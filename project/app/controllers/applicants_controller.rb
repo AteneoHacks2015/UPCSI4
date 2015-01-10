@@ -44,7 +44,8 @@ class ApplicantsController < ApplicationController
 	def profile
 		@user = Applicant.where(accounts_id:current_user.id).first
 		@add = Address.where(id:@user.add_id).first
-		@address = @add.block + " " + @add.street + " " + @add.municipality + ", " + @add.province + " " + @add.region
+		@address = (not @add.block == nil) ? (@add.block + " ") : ""
+		@address += @add.street + " " + @add.municipality + ", " + @add.province + " " + @add.region
 	end
 
 	def apply
