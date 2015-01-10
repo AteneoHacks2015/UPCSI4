@@ -14,7 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /project/log/*.log
 /project/tmp
-/project/tmp/**
+project/tmp/**
 
 /project/config/database.yml
 /project/tmp/pids/server.pid
