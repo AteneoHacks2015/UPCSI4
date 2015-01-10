@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :applicants do
     collection do
       get 'profile', to: 'applicants#profile'
+      post 'apply', to: 'applicants#apply'
     end
   end
 
