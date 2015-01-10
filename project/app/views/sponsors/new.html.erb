@@ -1,19 +1,4 @@
 <div id="sponsors">
-	<div id="header" class="fullwidth">
-		<div class="fixedwidth">
-			<span id="header-logo" class="left">
-				eskolarship
-			</span>
-			<span id="nav-list" class="right">
-				<%= link_to 'Home', root_path,
-					method: :get, class: "nav-item left" %>
-				<%= link_to 'Login', login_accounts_path,
-					method: :get, class: "nav-item left" %>
-				<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
-					method: :get, class: "nav-item left" %>
-			</span>
-		</div>
-	</div>
 	<div id="content">
 		<div class="content-section section-1" class="fullwidth">
 			<div class="fixedwidth">
@@ -63,30 +48,30 @@
 						| street       | varchar(255) | YES  |     | NULL    |                |
 						| block        | varchar(255) | YES  |     | NULL    |                |
 						+--------------+--------------+------+-----+---------+----------------+
- 
+
 						-->
 
 						<!-- fields for address -->
 						<%= text_field :address, :region%>
 						<%= label :address, 'Region' %>
-						
+
 						<%= text_field :address, :province%>
 						<%= label :address, 'Province' %>
-						
+
 						<%= text_field :address, :municipality%>
 						<%= label :address, 'Municipality' %>
 
 						<%= text_field :address, :street%>
 						<%= label :address, 'Street' %>
-						
+
 						<%= text_field :address, :block%>
 						<%= label :address, 'Block' %>
-						
+
 						<!-- fields for address -->
-						
+
 						<%= text_field :sponsor, :contact_num%>
 						<%= label :sponsor, 'Contact Number' %>
-						
+
 						<!-- add forms specific for sponsors -->
 
 						<%= button_tag 'Create Account', :type=>'submit' %>

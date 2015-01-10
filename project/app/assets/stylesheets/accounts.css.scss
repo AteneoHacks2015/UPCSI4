@@ -5,38 +5,8 @@
 
 // --------------------------------------------------------------------------- {{ Section: Styles }}
 #accounts {
-	#header {
-		height: 50px;
-		line-height: 50px;
-		font-family: "Roboto Condensed";
-		@include color-scheme(header);
-		z-index: 100;
-
-		#header-logo {
-			font-size: 120%;
-		}
-
-		a {
-			display: inline-block;
-			@include color-scheme(header);
-			padding: 0px 15px;
-			text-transform: uppercase;
-		}
-
-		a:hover {
-			background: rgba(255,255,255,0.1);
-		}
-	}
-
 	#content {
 		.content-section {
-			position: relative;
-			@include transition(preset-1);
-
-			.fixedwidth {
-				position: relative;
-			}
-
 			.title {
 				position: absolute;
 				top: 70px;

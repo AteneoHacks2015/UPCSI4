@@ -1,19 +1,4 @@
 <div id="applicants">
-	<div id="header" class="fullwidth">
-		<div class="fixedwidth">
-			<span id="header-logo" class="left">
-				eskolarship
-			</span>
-			<span id="nav-list" class="right">
-				<%= link_to 'Home', root_path,
-					method: :get, class: "nav-item left" %>
-				<%= link_to 'Login', login_accounts_path,
-					method: :get, class: "nav-item left" %>
-				<%= link_to 'Be A Sponsor', new_sponsor_path(:tag=>1),
-					method: :get, class: "nav-item left" %>
-			</span>
-		</div>
-	</div>
 	<div id="content">
 		<div class="content-section section-1" class="fullwidth">
 			<div class="fixedwidth">
@@ -26,37 +11,37 @@
 			<div class="fixedwidth">
 				<%= form_tag :role=>'form', :action=>'create' do %>
 					<%= hidden_field :accounts, :tag, :value=>@tag %>
-					
+
 					<%= text_field :accounts, :username, :value=>@username, placeholder:@unameholder %>
 					<%= label :accounts, 'Username' %>
-					
+
 					<%= text_field :accounts, :email, :value=>@email, placeholder:@emailholder %>
 					<%= label :accounts, 'Email' %>
-					
+
 					<%= password_field :accounts, :password, placeholder:'********' %>
 					<%= label :accounts, 'Password' %>
-					
+
 					<%= password_field :accounts, :password_confirmation, placeholder:'********' %>
 					<%= label :accounts, 'Confirm Password' %>
 
 					<%= text_field :applicant, :name, :value=>@name, placeholder:'Applicant Name' %>
 					<%= label :applicant, 'Name' %>
-					
+
 					<%= select(:applicant, :gender, @gender_options) %>
 					<%= label :applicant, 'Gender' %>
-	
+
 					<%= text_field :address, :region, :value=>@region, placeholder:'region' %>
 					<%= label :address, 'Region' %>
-					
+
 					<%= text_field :address, :province, :value=>@province, placeholder:'province' %>
 					<%= label :address, 'Province' %>
-					
+
 					<%= text_field :address, :municipality, :value=>@municipality, placeholder:'municipality' %>
 					<%= label :address, 'Municipality' %>
-					
+
 					<%= text_field :address, :street, :value=>@street, placeholder:'street' %>
 					<%= label :address, 'Street' %>
-					
+
 					<%= text_field :address, :block, :value=>@block, placeholder:'block' %>
 					<%= label :address, 'Block' %>
 
@@ -65,13 +50,13 @@
 
 					<%= text_field :applicant, :institution, :value=>@institution, placeholder:'institution' %>
 					<%= label :applicant, 'Institution' %>
-					
+
 					<%= text_field :applicant, :age, :value=>@age, placeholder:'age' %>
 					<%= label :applicant, 'Age' %>
-					
+
 					<%= select(:applicant, :level, @level_options) %>
 					<%= label :applicant, 'Level' %>
-					
+
 					<%= text_field :applicant, :degree_program, :value=>@degree_program, placeholder:'degree program' %>
 					<%= label :applicant, 'Degree Program' %>
 

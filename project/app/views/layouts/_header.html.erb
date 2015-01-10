@@ -10,11 +10,13 @@
 						method: :get, class: "nav-item left" %>
 					<% else %>
 						<%= link_to 'Home', users_path,
-						method: :get, class: "nav-item left" %>						
+						method: :get, class: "nav-item left" %>
 					<% end %>
-					<%= link_to 'logout', logout_accounts_path, method: :post %>
+					<%= link_to 'Logout', logout_accounts_path, method: :post %>
 				<% else %>
 					<%= link_to 'Home', root_path,
+						method: :get, class: "nav-item left" %>
+					<%= link_to 'Login', login_accounts_path,
 						method: :get, class: "nav-item left" %>
 					<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
 						method: :get, class: "nav-item left" %>
