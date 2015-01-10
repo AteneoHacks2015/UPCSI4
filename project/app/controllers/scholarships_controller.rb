@@ -20,6 +20,15 @@ class ScholarshipsController < ApplicationController
 
 	def view
 		@id = params[:id]
+		@apply_marker = 0
+		if current_user.tag == 0
+			@user = Applicant.where(accounts_id:current_user.id).first
+			if ApplicantScholarshipJoin.exists?(:app_id => @user.id, :sch_id => @id)
+				@apply_marker = 1
+			end
+		else
+			@apply_marker = 1
+		end
 		@scholarship = Scholarship.where(id:@id).first
 	end
 

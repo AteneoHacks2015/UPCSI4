@@ -13,7 +13,9 @@
 
 	<% if current_user.tag == 0 %>
 	<%= link_to 'Back', applicants_path %>
-	<%= link_to 'Apply', apply_applicants_path(:sch_id=>@id),method: :post %>
+	<% if @apply_marker == 0 %> 
+		<%= link_to 'Apply', apply_applicants_path(:sch_id=>@id),method: :post %>
+	<% end %>
 	<%else%>
 	<%= link_to 'Back', sponsors_path %>
 	<%end%>
