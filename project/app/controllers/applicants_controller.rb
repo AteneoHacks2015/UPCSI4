@@ -1,5 +1,8 @@
 class ApplicantsController < ApplicationController
 
+	def index
+	end
+
 	def new
 		@tag = params[:tag]
 		@gender_options = ["Male","Female"]

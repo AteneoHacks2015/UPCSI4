@@ -15,8 +15,8 @@ class AccountsController < ApplicationController
 
 		if user
 			session[:user_id] = user.id
-			@user = (current_user.tag == 0)? Applicant.where(user_id:current_user.id).first : Sponsor.where(user_id:current_user.id).first
-			redirect_to :root
+			@user = (current_user.tag == 0) ? Applicant.where(accounts_id:current_user.id).first : Sponsor.where(accounts_id:current_user.id).first
+			redirect_to (current_user.tag == 0 ? applicants_path : sponsors_path)
 		else
 			flash[:error] = "Please check you username or password."
 			redirect_to login_accounts_path
