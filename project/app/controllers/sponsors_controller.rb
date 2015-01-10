@@ -1,6 +1,6 @@
 class SponsorsController < ApplicationController
 
-	before_filter :deny_access, :unless => :sponsor?
+	before_filter :deny_access, :unless => :sponsor?, :except => [:new, :create]
 
 	def new
 		@tag = params[:tag].to_i
