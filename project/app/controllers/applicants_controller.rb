@@ -1,26 +1,30 @@
 class ApplicantsController < ApplicationController
 
 	def new
-		@name = params[:name]
-		@username = params[:username]
-		@email = params[:email]
 		@tag = params[:tag]
-		@account_id = (Accounts.last != nil) ? Accounts.last+1:1 
+		@gender_options = ["Male","Female"]
+		@level_options = ["High School", "College"]
 	end
 
 	def create
 		@account = Accounts.new(accounts_params)
+		#@applicant = Applicant.new(applicant_params)
 
-		if @account.valid?
+		if @account.valid? #and @applicant.valid?
 			render plain: params[:accounts].inspect
 		else
-			flash[:error] = @account.errors.full_messages.first
+			flash[:error] = (not @account.valid?) ? @account.errors.full_messages.first : @applicant.errors.full_messages.first
+			redirect_to new_applicant_path(@account.tag)
 		end
 	end
 
 	private
 		def accounts_params
-			params.require(:accounts).permit(:username, :email, :password, :password_confirmation)
+			params.require(:accounts).permit(:tag, :username, :email, :password, :password_confirmation)
+		end
+
+		def applicant_params
+			params.require(:applicant).permit(:name, :gender, :contact_num, :institution, :age, :level)
 		end
 
 end
