@@ -192,7 +192,17 @@ body {
 			}
 
 			a:hover {
-				border-bottom: 1px dotted rgba(128,128,128,0.5);
+				position: relative;
+				border-bottom: 1px solid rgba(128,128,128,0.5);
+			}
+
+			a:hover:after {
+				content: " ";
+				position: absolute;
+				bottom: -1px;
+				right: -15px;
+				border-right: 16px solid rgba(128,128,128,0.5);
+				border-top: 16px solid transparent;
 			}
 		}
 
@@ -237,6 +247,11 @@ body {
 				font-family: "Roboto";
 				font-weight: 300;
 				font-size: 100%;
+			}
+
+			input[type="text"][disabled="disabled"], input[type="password"][disabled="disabled"] {
+				background: rgba(0,0,0,0.1);
+				border: 1px solid rgba(0,0,0,0.1);
 			}
 
 			input[type="submit"], button {
@@ -315,4 +330,31 @@ table.profile {
 		font-size: 90%;
 		border-left: 1px solid rgba(0,0,0,0.1);
 	}
+}
+
+table.scholarships {
+	width: 100%;
+	font-size: 80%;
+
+	th {
+		border-bottom: 1px solid rgba(128,128,128,0.25);
+		font-size: 90%;
+	}
+
+	th, td {
+		padding: 5px 0px;
+	}
+
+	.number {
+		width: 10%;
+	}
+
+	.sponsor {
+		width: 45%;
+	}
+}
+
+.a-button {
+	display: block;
+	margin: 25px 0px 10px;
 }

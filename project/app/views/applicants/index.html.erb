@@ -1,20 +1,37 @@
-<h1>Applicant</h1>
+<div id="applicants">
+	<div id="content">
+		<div class="content-section section-1" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title">
+					Scholarships Available
+				</span>
+			</div>
+		</div>
+		<div class="content-section section-2" class="fullwidth">
+			<div class="fixedwidth">
+				<table class="scholarships">
+					<tr>
+						<th class="number">No.</th>
+						<th class="scholarship">Scholarship Title</th>
+						<th class="sponsor">Sponsor</th>
+					</tr>
 
-<h1> List of All Scholarships: </h1>
-
-<table border="1" frame="border" rules="all">
-	  
-	<tr>
-		<th width="5%">No.</th>
-		<th width="50%">Scholarship Title</th>
-		<th width="50%">Sponsor</th>
-	</tr>
-	<% @scholarships.each_with_index do |x, index| %>
-	<tr>
-		<td><%= index+1 %></td>
-		<td><%= link_to x.title, view_scholarships_path(:id=>x.id), method: :get%></td>
-		<td><%= @sponsors[index].institution_name %></td>
-	</tr>
-	<% end %>
-</table>
-
+					<% @scholarships.each_with_index do |x, index| %>
+						<tr>
+							<td class="number"><%= index+1 %></td>
+							<td class="scholarships"><%= link_to x.title,
+								view_scholarships_path(:id=>x.id), method: :get %></td>
+							<td class="sponsor"><%= @sponsors[index].institution_name %></td>
+						</tr>
+					<% end %>
+				</table>
+				<%= link_to "Add Scholarship", new_scholarship_path, class: "a-button" %>
+			</div>
+		</div>
+		<div id="footer" class="fullwidth">
+			<div class="fixedwidth">
+				&copy; UPCSI4 Ateneo Hacks 2015
+			</div>
+		</div>
+	</div>
+</div>

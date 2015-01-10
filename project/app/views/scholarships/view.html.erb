@@ -1,36 +1,63 @@
-<div style="padding-top: 100px">
-	<h1>Scholarship</h1>
-
-	<% if current_user.tag == 1 %>
-		<%= form_for @scholarship, :role=>'form',:as=>:scholarships, :url=>scholarship_path(@scholarship) do |f| %>
-			<%= hidden_field :accounts, :id, :value=>@id %>
-			<%= f.text_field :title %>
-			<%= f.label 'Title' %>
-			<%= f.text_field :desc %>
-			<%= f.label 'Description' %>
-			<%= f.text_field :slot %>
-			<%= f.label 'Slot' %>
-			<%= f.text_field :demand %>
-			<%= f.label 'Demand' %>
-			<%= f.text_field :req %>
-			<%= f.label 'Requirements' %>
-			<%= f.text_field :ben %>
-			<%= f.label 'Benefits' %>
-			<%= f.text_field :app_res %>
-			<%= f.label 'Applicant Restriction' %>	
-			<%= f.submit 'Submit' %>
-		<%end %>
-	<% end %>
-
-
-
-	<% if current_user.tag == 0 %>
-	<%= link_to 'Back', applicants_path %>
-	<% if @apply_marker == 0 %> 
-		<%= link_to 'Apply', apply_applicants_path(:sch_id=>@id),method: :post %>
-	<% end %>
-	<%else%>
-	<%= link_to 'Back', sponsors_path %>
-	<%end%>
-
+<div id="scholarships">
+	<div id="content">
+		<div class="content-section section-1" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title">
+					Scholarship
+				</span>
+			</div>
+		</div>
+		<div class="content-section section-2" class="fullwidth">
+			<div class="fixedwidth">
+				<% if current_user.tag == 1 %>
+					<%= form_for @scholarship, :role=>'form',:as=>:scholarships, :url=>scholarship_path(@scholarship) do |f| %>
+						<%= hidden_field :accounts, :id, :value=>@id %>
+						<%= f.text_field :title %>
+						<%= f.label 'Title' %>
+						<%= f.text_field :desc %>
+						<%= f.label 'Description' %>
+						<%= f.text_field :slot %>
+						<%= f.label 'Slot' %>
+						<%= f.text_field :demand, :disabled => "true" %>
+						<%= f.label 'Demand' %>
+						<%= f.text_field :req %>
+						<%= f.label 'Requirements' %>
+						<%= f.text_field :ben %>
+						<%= f.label 'Benefits' %>
+						<%= f.text_field :app_res %>
+						<%= f.label 'Applicant Restriction' %>
+						<%= f.submit 'Submit' %>
+					<% end %>
+				<% end %>
+				<% if current_user.tag == 0 %>
+						<%= f.text_field :title, :disabled => "true" %>
+						<%= f.label 'Title' %>
+						<%= f.text_field :desc, :disabled => "true" %>
+						<%= f.label 'Description' %>
+						<%= f.text_field :slot, :disabled => "true" %>
+						<%= f.label 'Slot' %>
+						<%= f.text_field :demand, :disabled => "true" %>
+						<%= f.label 'Demand' %>
+						<%= f.text_field :req, :disabled => "true" %>
+						<%= f.label 'Requirements' %>
+						<%= f.text_field :ben, :disabled => "true" %>
+						<%= f.label 'Benefits' %>
+						<%= f.text_field :app_res, :disabled => "true" %>
+						<%= f.label 'Applicant Restriction' %>
+						<%= f.submit 'Submit' %>
+					<%= link_to 'Back', applicants_path %>
+					<% if @apply_marker == 0 %>
+						<%= link_to 'Apply', apply_applicants_path(:sch_id=>@id),method: :post %>
+					<% end %>
+					<% else %>
+						<%= link_to 'Back', sponsors_path %>
+				<% end %>
+			</div>
+		</div>
+		<div id="footer" class="fullwidth">
+			<div class="fixedwidth">
+				&copy; UPCSI4 Ateneo Hacks 2015
+			</div>
+		</div>
+	</div>
 </div>
