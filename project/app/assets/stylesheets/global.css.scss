@@ -81,6 +81,7 @@ $media: (
 body {
 	min-width: 480px;
 	font: 300 16px "Roboto";
+	@include color-scheme(content-1);
 }
 
 .fullwidth {
@@ -91,6 +92,7 @@ body {
 	margin: auto;
 	@include responsive-key(width, (mobile 480px,
 		small 640px, medium 960px, large 1200px, xlarge 1600px));
+	@include transition(preset-1);
 }
 
 .left {
