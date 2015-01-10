@@ -9,7 +9,8 @@ class ScholarshipsController < ApplicationController
 		if @scholarship.valid?
 			#CREATE ACCOUNT
 			@scholarship.save
-			@sponsor_scholarship_join = SponsorScholarshipJoin.create(sp_id:current_user.id, sch_id:@scholarship.id)
+			@user = Sponsor.where(accounts_id:current_user.id).first
+			@sponsor_scholarship_join = SponsorScholarshipJoin.create(sp_id:@user.id, sch_id:@scholarship.id)
 			redirect_to :root
 		else
 			#TODO redirect to form
