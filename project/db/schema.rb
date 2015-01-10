@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   end
 
   create_table "scholarships", force: true do |t|
+    t.integer  "sc_id"
+    t.string   "title"
+    t.string   "desc"
+    t.integer  "slot"
+    t.string   "req"
+    t.string   "ben"
+    t.string   "app_res"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +66,11 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   end
 
   create_table "sponsors", force: true do |t|
+    t.integer "s_id"
+    t.string  "institution_name"
+    t.string  "add_id"
+    t.integer "contact_num"
+    t.string  "email_add"
   end
 
 end
