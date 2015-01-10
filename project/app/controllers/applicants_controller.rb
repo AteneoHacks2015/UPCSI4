@@ -47,6 +47,18 @@ class ApplicantsController < ApplicationController
 		@address = @add.block + " " + @add.street + " " + @add.municipality + ", " + @add.province + " " + @add.region
 	end
 
+	def apply
+		@user = Applicant.where(accounts_id:current_user.id).first
+		@sch_id = params[:sch_id]
+		@app_sch = ApplicantScholarshipJoin.create(app_id:@user.id,sch_id:@sch_id)
+
+		@scholarship = Scholarship.where(id:@sch_id).first
+		@scholarship.demand += 1
+		@scholarship.save
+
+		redirect_to :root
+	end
+
 	private
 		def accounts_params
 			params.require(:accounts).permit(:tag, :username, :email, :password, :password_confirmation)
