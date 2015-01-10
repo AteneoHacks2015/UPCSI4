@@ -6,6 +6,8 @@ class ApplicantsController < ApplicationController
 		@email = params[:email]
 		@tag = params[:tag]
 		@account_id = (Accounts.last != nil) ? Accounts.last+1:1 
+		@gender_options = ["Male","Female"]
+		@level_options = ["High School", "College"]
 	end
 
 	def create

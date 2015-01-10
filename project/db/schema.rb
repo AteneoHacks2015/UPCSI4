@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 20150110082255) do
   end
 
   create_table "sponsors", force: true do |t|
-    t.integer "s_id"
     t.string  "institution_name"
     t.string  "add_id"
     t.integer "contact_num"
