@@ -1,46 +1,39 @@
 <div id="welcome">
-	<div id="content">
-		<div class="content-section section-1" class="fullwidth">
-			<div class="fixedwidth">
-				<span class="title left">
-					eskolarship
-				</span>
-				<span class="desc left">
-					streamlining student scholarship applications
-				</span>
+	<div id="carousel">
+		<div class="carousel-item item1">
+			<div class="title">
+				eskolarship
+			</div>
+			<div class="desc">
+				streamlining student scholarship applications
 			</div>
 		</div>
-		<div class="content-section section-2" class="fullwidth">
-			<div class="fixedwidth">
-				<span class="title right">
-					Be a scholar
-				</span>
-				<span class="desc right">
-					find the right scholarship for you
-				</span>
+		<div class="carousel-item item2">
+			<div class="title">
+				Be a scholar
 			</div>
+			<div class="desc">
+				find the right scholarship for you
+			</div>
+			<%= link_to 'Sign in', login_accounts_path,
+				method: :get, class: "button" %>
 		</div>
-		<div class="content-section section-3" class="fullwidth">
-			<div class="fixedwidth">
-				<span class="title left">
-					Be a sponsor
-				</span>
-				<span class="desc left">
-					reach out to those in need
-				</span>
+		<div class="carousel-item item3">
+			<div class="title">
+				Be a sponsor
 			</div>
+			<div class="desc">
+				reach out to those in need
+			</div>
+			<%= link_to 'Sign in', login_accounts_path,
+				method: :get, class: "button" %>
 		</div>
-		<div class="content-section section-4" class="fullwidth">
-			<div class="fixedwidth">
-				Already a member?
-				<%= link_to 'Sign in', login_accounts_path,
-					method: :get %>.
-			</div>
-		</div>
-		<div id="footer" class="fullwidth">
-			<div class="fixedwidth">
-				&copy; UPCSI4 Ateneo Hacks 2015
-			</div>
+	</div>
+	<div id="footer" class="fullwidth">
+		<div class="fixedwidth">
+			Already a member?
+			<%= link_to 'Sign in', login_accounts_path,
+				method: :get %>.
 		</div>
 	</div>
 </div>
