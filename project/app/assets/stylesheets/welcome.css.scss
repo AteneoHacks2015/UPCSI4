@@ -5,49 +5,8 @@
 
 // --------------------------------------------------------------------------- {{ Section: Styles }}
 #welcome {
-	#header {
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		height: 50px;
-		line-height: 50px;
-		font-family: "Roboto Condensed";
-		@include color-scheme(header);
-		@include transition(preset-1);
-		z-index: 100;
-
-		#header-logo {
-			font-size: 120%;
-		}
-
-		a {
-			display: inline-block;
-			@include color-scheme(header);
-			padding: 0px 15px;
-			text-transform: uppercase;
-		}
-
-		a:hover {
-			background: rgba(255,255,255,0.1);
-		}
-	}
-
-	#header:hover {
-		height: 75px;
-		line-height: 75px;
-	}
-
 	#content {
-		padding: 50px 0px 0px 0px;
-
 		.content-section {
-			position: relative;
-			@include transition(preset-1);
-
-			.fixedwidth {
-				position: relative;
-			}
-
 			.title {
 				position: absolute;
 				top: 80px;

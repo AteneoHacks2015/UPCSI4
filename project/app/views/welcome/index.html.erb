@@ -1,19 +1,4 @@
 <div id="welcome">
-	<div id="header" class="fullwidth">
-		<div class="fixedwidth">
-			<span id="header-logo" class="left">
-				eskolarship
-			</span>
-			<span id="nav-list" class="right">
-				<%= link_to 'Login', login_accounts_path,
-					method: :get, class: "nav-item left" %>
-				<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
-					method: :get, class: "nav-item left" %>
-				<%= link_to 'Be A Sponsor', new_sponsor_path(:tag=>1),
-					method: :get, class: "nav-item left" %>
-			</span>
-		</div>
-	</div>
 	<div id="content">
 		<div class="content-section section-1" class="fullwidth">
 			<div class="fixedwidth">
