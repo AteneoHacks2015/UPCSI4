@@ -2,6 +2,9 @@ class Accounts < ActiveRecord::Base
 	attr_accessor :password
 	before_save :encrypt_password
 
+	has_one :applicant, :dependent=>:destroy
+	has_one :sponsor, :dependent=>:destroy
+
 	validates_presence_of :username
 	validates_uniqueness_of :username, :case_sensitive=>false
 	validates_presence_of :email
