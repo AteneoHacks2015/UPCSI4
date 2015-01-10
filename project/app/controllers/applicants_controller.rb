@@ -2,6 +2,8 @@ class ApplicantsController < ApplicationController
 
 	def new
 		@tag = params[:tag]
+		@gender_options = ["Male","Female"]
+		@level_options = ["High School", "College"]
 	end
 
 	def create
