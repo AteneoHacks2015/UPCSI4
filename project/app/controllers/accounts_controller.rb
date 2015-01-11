@@ -33,6 +33,22 @@ class AccountsController < ApplicationController
 		@user = (@account.tag == 0) ? Applicant.where(accounts_id:current_user.id).first : Sponsor.where(accounts_id:current_user.id).first
 		@address = Address.where(id:@user.add_id).first.destroy
 		@account.destroy
+		if @account.tag == 1
+			@sp_sch = SponsorScholarshipJoin.where(sp_id:current_user.id)
+			@sp_sch.each do |x|
+				
+				ApplicantScholarshipJoin.where(sch_id:x.sch_id).each do |y|
+					y.destroy
+				end
+				ApplicantGrants.where(sch_id:x.sch_id).each do |y|
+					y.destroy
+				end
+				Scholarship.where(id:x.sch_id).each do |y|
+					y.destroy
+				end
+				x.destroy
+			end
+		end
 		redirect_to :root
 	end
 
