@@ -33,6 +33,9 @@ class ScholarshipsController < ApplicationController
 			@apply_marker = 1
 		end
 		@scholarship = Scholarship.where(id:@id).first
+		if @scholarship.slot == 0
+			@apply_marker = 1
+		end
 	end
 
 	def update
