@@ -26,6 +26,9 @@ class ScholarshipsController < ApplicationController
 			if ApplicantScholarshipJoin.exists?(:app_id => @user.id, :sch_id => @id)
 				@apply_marker = 1
 			end
+			if ApplicantGrants.exists?(:app_id => @user.id, :sch_id => @id)
+				@apply_marker = 1
+			end
 		else
 			@apply_marker = 1
 		end
@@ -69,10 +72,22 @@ class ScholarshipsController < ApplicationController
 			@join.destroy
 			redirect_to :root
 		end
+		if @s.demand == 0
+			redirect_to :root
+		else
+			@s.demand -= 1
+			@s.save
+		end
 	end
 
 	def deny
 		@s = Scholarship.where(id: params[:id]).first
+		if @s.demand == 0
+			redirect_to :root
+		else
+			@s.demand -= 1
+			@s.save
+		end
 		@join = ApplicantScholarshipJoin.where(sch_id:@s.id).first
 		@join.destroy
 		redirect_to :root
