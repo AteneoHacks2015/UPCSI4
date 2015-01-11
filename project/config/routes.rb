@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     collection do
       get 'view', to: 'scholarships#view'
       post 'edit', to: 'scholarships#edit'
+      post 'approve', to: 'scholarships#approve'
+      
+      post 'accept', to: 'scholarships#accept'
+      post 'deny', to: 'scholarships#deny'
     end
   end
 

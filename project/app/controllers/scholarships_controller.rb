@@ -48,6 +48,36 @@ class ScholarshipsController < ApplicationController
 
 	end
 
+	def approve
+		@scholarship = Scholarship.where(id: params[:id]).first
+		@join = ApplicantScholarshipJoin.all
+	end
+
+	def accept
+		@s = Scholarship.where(id:params[:id]).first
+		@join = ApplicantScholarshipJoin.where(sch_id:params[:id]).first
+		@app = Applicant.where(id:@join.app_id).first
+		if @s.slot == 0
+			#DO SOMETHING
+			
+			redirect_to :root
+		else
+			@s.slot -= 1
+			@s.save
+			#DO SOMETHING
+			ApplicantGrants.create(app_id:@app.id, sch_id:@s.id)
+			@join.destroy
+			redirect_to :root
+		end
+	end
+
+	def deny
+		@s = Scholarship.where(id: params[:id]).first
+		#DO SOMETHING
+		@s.destroy
+		redirect_to :root
+	end
+
 	private
 		def scholarships_params
 			params.require(:scholarships).permit(:title, :desc, :slot, :req, :ben, :app_res)

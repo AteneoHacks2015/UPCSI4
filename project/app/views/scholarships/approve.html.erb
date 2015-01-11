@@ -1,0 +1,6 @@
+<% @join.each do |i|%>
+	<% if i[:sch_id] == @scholarship.id && Applicant.where(id: i.app_id).first%>
+		<% @app = Applicant.where(id: i.app_id).first %>
+		<%= @app.name %>  <%= link_to 'Approve', accept_scholarships_path(:id=>@scholarship.id), method: :post%>  <%= link_to 'Deny', deny_scholarships_path(:id=>@scholarship.id), method: :post%> </br>
+	<%end%>
+<% end %>
