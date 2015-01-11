@@ -9,7 +9,7 @@
 
 applicant_list = []
 i = 0
-while i < 5
+while i < 10
 	gender = (i%2 == 0) ? 'Male' : 'Female'
 	level = (i%2 == 0) ? 'High School' : 'College'
 	account = Accounts.create tag: 0, username:'applicant'+i.to_s, email:'applicant'+i.to_s+'@gmail.com', password:'password'
@@ -28,7 +28,7 @@ while i < 10
 	address = Address.create region:'NCR', province:'Quezone City', municipality:'Loyola Heights', street:'Katipunan'
 	
 	sponsor = Sponsor.create  accounts_id:account.id, institution_name:'sponsor'+i.to_s, add_id:address.id, contact_num:'09123456789'
-	scholarship = Scholarship.create title:'Scholarship '+i.to_s, desc:sponsor.institution_name+'\'s scholarship', slot: 1, demand:0, req: sponsor.institution_name+'\'s requirements', ben: sponsor.institution_name+'\'s benefits', app_res: 'women only'
+	scholarship = Scholarship.create title:'Scholarship '+i.to_s, desc:sponsor.institution_name+'\'s scholarship', slot: 5, demand:1, req: sponsor.institution_name+'\'s requirements', ben: sponsor.institution_name+'\'s benefits', app_res: 'women only'
 	
 	sponsor_scholarship_join = SponsorScholarshipJoin.create sp_id: sponsor.id, sch_id: scholarship.id
 	applicant_scholarship_join = ApplicantScholarshipJoin.create app_id: nil, sch_id: scholarship.id	
