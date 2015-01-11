@@ -17,12 +17,14 @@
 					</tr>
 
 					<% @scholarships_grants.each_with_index do |x, index| %>
+					<% if x!= nil %>
 						<tr>
 							<td class="number"><%= index+1 %></td>
 							<td class="scholarships"><%= link_to x.title,
 								view_scholarships_path(:id=>x.id), method: :get %></td>
 							<td class="sponsor"><%= @sponsors_grant[index].institution_name %></td>
 						</tr>
+					<% end %>
 					<% end %>
 				</table>
 			</div>
@@ -44,12 +46,14 @@
 					</tr>
 
 					<% @scholarships_applied.each_with_index do |x, index| %>
+					<% if x != nil %>
 						<tr>
 							<td class="number"><%= index+1 %></td>
 							<td class="scholarships"><%= link_to x.title,
 								view_scholarships_path(:id=>x.id), method: :get %></td>
 							<td class="sponsor"><%= @sponsors_applied[index].institution_name %></td>
 						</tr>
+					<% end %>
 					<% end %>
 				</table>
 			</div>

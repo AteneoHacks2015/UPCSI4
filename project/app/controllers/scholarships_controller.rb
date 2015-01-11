@@ -73,9 +73,17 @@ class ScholarshipsController < ApplicationController
 
 	def deny
 		@s = Scholarship.where(id: params[:id]).first
-		#DO SOMETHING
-		@s.destroy
+		@join = ApplicantScholarshipJoin.where(sch_id:@s.id).first
+		@join.destroy
 		redirect_to :root
+	end
+
+	def viewapp
+		@user = Applicant.where(id:params[:id]).first
+		@account_user = Accounts.where(id:@user.id).first
+		@add = Address.where(id:@user.add_id).first
+		@address = (not @add.block == nil) ? (@add.block + " ") : ""
+		@address += @add.street + " " + @add.municipality + ", " + @add.province + " " + @add.region
 	end
 
 	private

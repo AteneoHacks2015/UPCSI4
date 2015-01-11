@@ -11,11 +11,15 @@ class ApplicantsController < ApplicationController
 		end
 		@sp_sch = Array.new
 		@scholarships_grants.each do |x|
-			@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+			if x != nil
+				@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+			end
 		end
 		@sponsors_grant = Array.new
 		@sp_sch.each do |x|
-			@sponsors_grant.push(Sponsor.where(id:x.sp_id).first)
+			if x != nil
+				@sponsors_grant.push(Sponsor.where(id:x.sp_id).first)
+			end
 		end
 
 		######
@@ -26,7 +30,9 @@ class ApplicantsController < ApplicationController
 		end
 		@sp_sch = Array.new
 		@scholarships_applied.each do |x|
-			@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+			if x != nil
+				@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+			end
 		end
 		@sponsors_applied = Array.new
 		@sp_sch.each do |x|

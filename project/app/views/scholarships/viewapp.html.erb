@@ -1,0 +1,62 @@
+<div id="applicants-profile">
+	<div id="content">
+		<div class="content-section section-1" class="fullwidth">
+			<div class="fixedwidth">
+				<span class="title">
+					Profile
+				</span>
+			</div>
+		</div>
+		<div class="content-section section-2" class="fullwidth">
+			<div class="fixedwidth">
+				<table class="profile">
+					<tr class="row">
+						<td class="label">Username</td>
+						<td class="data"><%= @account_user.username %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Email</td>
+						<td class="data"><%= @account_user.email %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Name</td>
+						<td class="data"><%= @user.name %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Gender</td>
+						<td class="data"><%= @user.gender %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Address</td>
+						<td class="data"><%= @address %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Contact Number</td>
+						<td class="data"><%= @user.contact_num %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Institution</td>
+						<td class="data"><%= @user.institution %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Age</td>
+						<td class="data"><%= @user.age %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Level</td>
+						<td class="data"><%= @user.level %></td>
+					</tr>
+					<tr class="row">
+						<td class="label">Degree Program</td>
+						<td class="data"><%= @user.degree_program %></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="footer" class="fullwidth">
+			<div class="fixedwidth">
+				&copy; UPCSI4 Ateneo Hacks 2015
+			</div>
+		</div>
+	</div>
+</div>

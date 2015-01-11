@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       
       post 'accept', to: 'scholarships#accept'
       post 'deny', to: 'scholarships#deny'
+      get 'viewapp', to: 'scholarships#viewapp'
     end
   end
 
