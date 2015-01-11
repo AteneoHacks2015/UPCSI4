@@ -52,7 +52,7 @@
 					</tr>
 					<tr class="row">
 						<td class="label">Date Created</td>
-						<td class="data"><%= @current_user.created_at %></td>
+						<td class="data"><%= @current_user.created_at.to_time.strftime("%b %d, %Y, %I:%M %P") %></td>
 					</tr>
 				</table>
 				<%= link_to 'Delete', delete_accounts_path, method: :delete %>
