@@ -49,6 +49,22 @@ class AccountsController < ApplicationController
 				x.destroy
 			end
 		end
+		if @account.tag == 0
+			@ap_sch = ApplicantScholarshipJoin.where(app_id:current_user.id)
+			@ap_sch.each do |x|
+				@s = Scholarship.where(id:x.sch_id).first
+				@s.demand -= 1
+				@s.save
+				x.destroy
+			end
+			@ap_grant = ApplicantGrants.where(app_id:current_user.id)
+			@ap_grant.each do |x|
+				@s = Scholarship.where(id:x.sch_id).first
+				@s.slot += 1
+				@s.save
+				x.destroy
+			end 
+		end
 		redirect_to :root
 	end
 
