@@ -3,6 +3,37 @@ class ApplicantsController < ApplicationController
 	before_filter :deny_access, :unless => :applicant?, :except => [:new, :create]
 
 	def index
+
+		@grant_scholarship = ApplicantGrants.where(app_id:current_user.id)
+		@scholarships_grants = Array.new
+		@grant_scholarship.each do |x|
+			@scholarships_grants.push(Scholarship.where(id:x.sch_id).first)
+		end
+		@sp_sch = Array.new
+		@scholarships_grants.each do |x|
+			@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+		end
+		@sponsors_grant = Array.new
+		@sp_sch.each do |x|
+			@sponsors_grant.push(Sponsor.where(id:x.sp_id).first)
+		end
+
+		######
+		@applicant_scholarship = ApplicantScholarshipJoin.where(app_id:current_user.id)
+		@scholarships_applied = Array.new
+		@applicant_scholarship.each do |x|
+			@scholarships_applied.push(Scholarship.where(id:x.sch_id).first)
+		end
+		@sp_sch = Array.new
+		@scholarships_applied.each do |x|
+			@sp_sch.push(SponsorScholarshipJoin.where(sch_id:x.id).first)
+		end
+		@sponsors_applied = Array.new
+		@sp_sch.each do |x|
+			@sponsors_applied.push(Sponsor.where(id:x.sp_id).first)
+		end
+
+		######
 		@scholarships = Scholarship.all
 		@sp_sch = Array.new
 		@scholarships.each do |x|

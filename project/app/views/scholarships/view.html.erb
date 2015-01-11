@@ -30,6 +30,7 @@
 					<% end %>
 				<% end %>
 				<% if current_user.tag == 0 %>
+					<%= form_for @scholarship, :role=>'form',:as=>:scholarships, :url=>scholarship_path(@scholarship) do |f| %>
 						<%= f.text_field :title, :disabled => "true" %>
 						<%= f.label 'Title' %>
 						<%= f.text_field :desc, :disabled => "true" %>
@@ -44,7 +45,7 @@
 						<%= f.label 'Benefits' %>
 						<%= f.text_field :app_res, :disabled => "true" %>
 						<%= f.label 'Applicant Restriction' %>
-						<%= f.submit 'Submit' %>
+					<% end %>
 					<%= link_to 'Back', applicants_path %>
 					<% if @apply_marker == 0 %>
 						<%= link_to 'Apply', apply_applicants_path(:sch_id=>@id),method: :post %>
