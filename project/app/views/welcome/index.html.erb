@@ -2,7 +2,7 @@
 	<div id="carousel">
 		<div class="carousel-item item1">
 			<div class="title">
-				eskolarship
+				<img src="/images/logo.svg" height="80px" style="opacity: 0.7;" />
 			</div>
 			<div class="desc">
 				streamlining student scholarship applications
@@ -15,7 +15,7 @@
 			<div class="desc">
 				find the right scholarship for you
 			</div>
-			<%= link_to 'Sign in', login_accounts_path,
+			<%= link_to 'Sign Up', new_applicant_path(:tag=>0),
 				method: :get, class: "button" %>
 		</div>
 		<div class="carousel-item item3">
@@ -25,7 +25,7 @@
 			<div class="desc">
 				reach out to those in need
 			</div>
-			<%= link_to 'Sign in', login_accounts_path,
+			<%= link_to 'Be a Sponsor', new_sponsor_path(:tag=>1),
 				method: :get, class: "button" %>
 		</div>
 	</div>
