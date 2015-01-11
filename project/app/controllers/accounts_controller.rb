@@ -25,7 +25,6 @@ class AccountsController < ApplicationController
 
 	def logout
 		session[:user_id] = nil
-		flash[:notice] = "You have been signed out."
 		redirect_to :root		
 	end
 
